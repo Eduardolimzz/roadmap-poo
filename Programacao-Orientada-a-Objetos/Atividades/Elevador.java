@@ -1,31 +1,50 @@
 public class Elevador{
     private int andarAtual;
-    private int capacidadeMax;
-    private int qtdPessoas;
+    private int capacidadeMaxima;
+    private int quantidadePessoas;
     private int totalAndares;
 
-    //Construtor padrão do Elevador, se colocar private não vai conseguir acessar o construtor sem os parametros
-    public Elevador(int andares, int capacidadeMax){
-        //acessa uma variavel referindo-se ao objeto atual da classe
-        this.capacidadeMax = capacidadeMax;
-        totalAndares = andares;
-        andarAtual = 0;
-        qtdPessoas = 0;
+    //Construtor do Elevador - capacidade máxima de 10 pessoas e começa no térreo
+    public Elevador(int totalAndares){
+        this.totalAndares = totalAndares;
+        this.capacidadeMaxima = 10;
+        this.andarAtual = 0;
+        this.quantidadePessoas = 0;
     }
-    //não preciso colocar parametro para subir pois é uma regra de negocio
+
+    public void entrar(){
+        if(quantidadePessoas < capacidadeMaxima){
+            quantidadePessoas++;
+            System.out.println("Pessoa entrou. Pessoas no elevador: " + quantidadePessoas);
+        } else {
+            System.out.println("Elevador lotado! Capacidade máxima atingida.");
+        }
+    }
+
+    public void sair(){
+        if(quantidadePessoas > 0){
+            quantidadePessoas--;
+            System.out.println("Pessoa saiu. Pessoas no elevador: " + quantidadePessoas);
+        } else {
+            System.out.println("Não há ninguém no elevador.");
+        }
+    }
+
     public void subir(){
-        if(andarAtual == totalAndares - 1){
-            System.out.println("Ultimo andar alcançado");
-            return;
+        if(andarAtual < totalAndares - 1){
+            andarAtual++;
+            System.out.println("Subiu para o andar: " + andarAtual);
+        } else {
+            System.out.println("Já está no último andar!");
         }
-        andarAtual++;
     }
+
     public void descer(){
-        if(andarAtual == 0){
-            System.out.println("Você está no primeiro andar, não é possível descer");
-            return;
+        if(andarAtual > 0){
+            andarAtual--;
+            System.out.println("Desceu para o andar: " + andarAtual);
+        } else {
+            System.out.println("Já está no térreo! Não pode descer mais.");
         }
-        andarAtual--;
     }
 }
-
