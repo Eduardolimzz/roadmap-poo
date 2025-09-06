@@ -9,10 +9,10 @@ A ideia é transformar o curso em um **roadmap prático**, servindo como registr
 
 Este repositório documenta minha jornada acadêmica, incluindo:
 
-- ** Conceitos Fundamentais** - Base teórica da computação
-- ** Programação Orientada a Objetos** - Paradigmas de desenvolvimento
-- ** Estruturas de Dados** - Algoritmos e otimização
-- ** Projetos Práticos** - Aplicações reais dos conceitos aprendidos
+- **Conceitos Fundamentais** - Base teórica da computação
+- **Programação Orientada a Objetos** - Paradigmas de desenvolvimento
+- **Estruturas de Dados** - Algoritmos e otimização
+- **Projetos Práticos** - Aplicações reais dos conceitos aprendidos
 
 Cada pasta representa uma disciplina ou área de conhecimento, com exercícios resolvidos, projetos implementados e anotações de estudo.
 
