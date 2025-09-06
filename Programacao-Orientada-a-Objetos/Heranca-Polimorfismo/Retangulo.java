@@ -27,7 +27,7 @@ class Retangulo extends Forma2D {
 
     @Override
     public double perimetro() {
-        return 2*(base + altura); // π * r²
+        return 2 * (base + altura); // π * r²
     }
 
     @Override
