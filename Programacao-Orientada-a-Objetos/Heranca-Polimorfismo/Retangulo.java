@@ -22,18 +22,18 @@ class Retangulo extends Forma2D {
 
     @Override
     public double area() {
-        return base + altura; // π * r²
+        return base * altura;
     }
 
     @Override
     public double perimetro() {
-        return 2 * (base + altura); // π * r²
+        return 2 * (base + altura);
     }
 
     @Override
     public void descricao() {
         System.out.println("Nome: " + obterNome());
-        System.out.println("Raio: " + base);
+        System.out.println("Base: " + base);
         System.out.println("Altura: " + altura);
         System.out.println("Área: " + area());
         System.out.println("Perímetro: " + perimetro());
