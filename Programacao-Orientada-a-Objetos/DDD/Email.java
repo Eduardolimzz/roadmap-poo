@@ -4,20 +4,19 @@ public class Email {
 
     private final String value;
 
-    public Email(String value) {
-        if (value == null || value.matches("^(\\w+(\\.\\w)*)+@[a-z]+\\.[a-z]{2,3}$"))
-            throw new IllegalArgumentException("Email é invalido");
-        this.value = value;
+    public Email(String value){
+        if(value==null||!value.matches("^(\\w+(\\.\\w)?)+@[a-z]+\\.[a-z]+(\\.[a-z]+)?$"))
+            throw new IllegalArgumentException("Email invalido");
+        this.value = value.toLowerCase();
     }
 
-    public String getValue() {
-        return value;
+    public String getEmail (){
+        return this.value;
     }
-
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Email)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Email email = (Email) o;
         return Objects.equals(value, email.value);
     }

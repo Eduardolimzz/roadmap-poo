@@ -3,41 +3,39 @@ import java.util.UUID;
 public class CustomerDDD {
     private final UUID id;
     private String name;
-    private String email;
+    private Email email;
 
-
-    public CustomerDDD(String name, String email) {
-        if (name == null || name.isBlank())
-            throw new IllegalArgumentException("Nome é Obrigatório");
-        if (email == null || !email.matches("^(\\w+(\\.\\w)*)+@[a-z]+\\.[a-z]{2,3}$"))
-            throw new IllegalArgumentException("Email é inválido");
+    // regras de validação
+    public CustomerDDD(String nome, Email email){
+        if(nome == null || nome.isBlank())
+            throw new IllegalArgumentException("Nome é obrigatório");
 
         this.id = UUID.randomUUID();
-        this.name = name;
+        this.name = nome;
         this.email = email;
     }
 
     public UUID getId() {
         return id;
     }
-
-    public String getName() {
+    public String getName(){
         return name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmail(){
+        return email.getEmail();
     }
 
-    public void rename(String newName) {
-        if (newName == null || newName.isBlank())
-            throw new IllegalArgumentException("Nome é Obrigatório");
-        this.name = newName;
+    //Evite Stters sem definição de inteção de domínio
+
+    // Domínio com explícita  intenção, com regras de negócio
+    public void rename(String newname){
+        if(newname == null || newname.isBlank())
+            throw new IllegalArgumentException("Nome é obrigatório");
+        this.name = newname;
     }
 
-    public void Changeemail(String newEmail) {
-        if (newEmail == null || !newEmail.matches("^(\\w+(\\.\\w)*)+@[a-z]+\\.[a-z]{2,3}$"))
-            throw new IllegalArgumentException("Email é inválido");
-        this.name = newEmail;
+    public void changeEmail(Email email){
+        this.email = email;
     }
 }
