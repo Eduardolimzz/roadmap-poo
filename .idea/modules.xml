@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Think-Like-a-Programmer/Think-Like-a-Programmer.iml" filepath="$PROJECT_DIR$/Think-Like-a-Programmer/Think-Like-a-Programmer.iml" />
       <module fileurl="file://$PROJECT_DIR$/roadmap-poo.iml" filepath="$PROJECT_DIR$/roadmap-poo.iml" />
     </modules>
   </component>
